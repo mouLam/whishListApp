@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { WishList } from "../shared/wishList";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgForOf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'whishListApp';
+  title = 'wishListApp';
+  wishes: WishList[] = [
+    new WishList("Work about Angular"),
+    new WishList("Build a house", true),
+    new WishList("Make a coffee"),
+  ];
+
 }
