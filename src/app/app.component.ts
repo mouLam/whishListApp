@@ -19,6 +19,8 @@ export class AppComponent {
     new WishList("Make a coffee"),
   ];
   newWishText: string = "";
+  filterValueSelected: string = "1";
+  filteredWishes: WishList[] = this.wishes;
 
   checkOrUncheck(wish: WishList): void {
     wish.isCompleted = !wish.isCompleted;
@@ -27,5 +29,15 @@ export class AppComponent {
   addWish() {
     this.wishes.push(new WishList(this.newWishText));
     this.newWishText = "";
+  }
+
+  filterWishes(value: any) {
+    if (value === "1") {
+      this.filteredWishes = this.wishes;
+    } else if (value === "2") {
+      this.filteredWishes = this.wishes.filter(wish => wish.isCompleted);
+    } else {
+      this.filteredWishes = this.wishes.filter(wish => !wish.isCompleted);
+    }
   }
 }
