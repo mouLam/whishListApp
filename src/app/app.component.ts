@@ -4,6 +4,12 @@ import { WishList } from "../shared/wishList";
 import {NgForOf, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 
+const filters = [
+  (wish : WishList) => wish,
+  (wish : WishList) => wish.isCompleted,
+  (wish : WishList) => !wish.isCompleted
+];
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,8 +25,7 @@ export class AppComponent {
     new WishList("Make a coffee"),
   ];
   newWishText: string = "";
-  filterValueSelected: string = "1";
-  filteredWishes: WishList[] = this.wishes;
+  filterValueSelected: any = "0";
 
   checkOrUncheck(wish: WishList): void {
     wish.isCompleted = !wish.isCompleted;
@@ -31,13 +36,7 @@ export class AppComponent {
     this.newWishText = "";
   }
 
-  filterWishes(value: any) {
-    if (value === "1") {
-      this.filteredWishes = this.wishes;
-    } else if (value === "2") {
-      this.filteredWishes = this.wishes.filter(wish => wish.isCompleted);
-    } else {
-      this.filteredWishes = this.wishes.filter(wish => !wish.isCompleted);
-    }
+  get filteredWishes() : WishList[] {
+    return this.wishes.filter(filters[this.filterValueSelected]);
   }
 }
