@@ -1,0 +1,6 @@
+<div class="container-fluid p-4">
+  <form class="d-flex" role="form">
+    <input class="form-control me-2" type="search" placeholder="Add a wish" aria-label="Add" name="new wish text" [(ngModel)]="newWishText"/>
+    <button class="btn btn-outline-success" (click)="$event.preventDefault(); addWish()" type="submit">Add</button>
+  </form>
+</div>
