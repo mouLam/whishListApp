@@ -3,12 +3,11 @@
     <h1>All my wishes</h1>
   </div>
 
-  <div class="container-fluid p-4">
-    <form class="d-flex" role="form">
-      <input class="form-control me-2" type="search" placeholder="Add a wish" aria-label="Add" name="new wish text" [(ngModel)]="newWishText"/>
-      <button class="btn btn-outline-success" (click)="$event.preventDefault(); addWish()" type="submit">Add</button>
-    </form>
-  </div>
+  <app-add-wish-form
+    [wishes]="filteredWishes"
+    (addNewWish)="wishes.push($event)"
+  >
+  </app-add-wish-form>
 
   <div class="p-3">
     <select class="form-select w-50" aria-label="Filter wishes"
@@ -21,7 +20,8 @@
   </div>
 
   <app-wish-list-show
-    [filteredWishes]="filteredWishes"
-    [filterValueSelected]="filterValueSelected">
+    [wishes]="filteredWishes"
+    [filterValueSelected]="filterValueSelected"
+  >
   </app-wish-list-show>
 </div>

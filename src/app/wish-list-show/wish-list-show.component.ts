@@ -13,8 +13,8 @@ import {WishList} from "../../shared/wishList";
   styleUrl: './wish-list-show.component.scss'
 })
 export class WishListShowComponent {
+  @Input() wishes: WishList[] = [];
   @Input() filterValueSelected!: any;
-  @Input() filteredWishes!: WishList[];
 
   checkOrUncheck(wish: WishList): void {
     wish.isCompleted = !wish.isCompleted;
