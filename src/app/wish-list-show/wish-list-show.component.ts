@@ -14,7 +14,6 @@ import {WishList} from "../../shared/wishList";
 })
 export class WishListShowComponent {
   @Input() wishes: WishList[] = [];
-  @Input() filterValueSelected!: any;
 
   checkOrUncheck(wish: WishList): void {
     wish.isCompleted = !wish.isCompleted;

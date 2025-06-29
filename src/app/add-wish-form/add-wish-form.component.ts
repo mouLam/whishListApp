@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {WishList} from "../../shared/wishList";
 
@@ -14,12 +14,11 @@ import {WishList} from "../../shared/wishList";
 })
 export class AddWishFormComponent {
 
-  @Input() wishes: WishList[] = [];
-  @Output() addNewWish = new EventEmitter<WishList>;
+  @Output() addNewWishEmit = new EventEmitter<WishList>;
   newWishText : string = "";
 
   addWish() {
-    this.addNewWish.emit(new WishList(this.newWishText));
+    this.addNewWishEmit.emit(new WishList(this.newWishText));
     this.newWishText = "";
   }
 

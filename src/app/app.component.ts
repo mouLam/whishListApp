@@ -1,19 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {WishList} from "../shared/wishList";
 import {FormsModule} from "@angular/forms";
 import {WishListShowComponent} from "./wish-list-show/wish-list-show.component";
 import {AddWishFormComponent} from "./add-wish-form/add-wish-form.component";
-
-const filters = [
-  (wish : WishList) => wish,
-  (wish : WishList) => wish.isCompleted,
-  (wish : WishList) => !wish.isCompleted
-];
+import {FilterWishListComponent} from "./filter-wish-list/filter-wish-list.component";
+import {filter} from "rxjs";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, WishListShowComponent, AddWishFormComponent],
+  imports: [FormsModule, WishListShowComponent, AddWishFormComponent, FilterWishListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -24,9 +20,7 @@ export class AppComponent {
     new WishList("Build a house", true),
     new WishList("Make a coffee"),
   ];
-  filterValueSelected: any = "0";
 
-  get filteredWishes() : WishList[] {
-    return this.wishes.filter(filters[this.filterValueSelected]);
-  }
+  filter: any = () => {};
+
 }

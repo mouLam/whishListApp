@@ -4,24 +4,14 @@
   </div>
 
   <app-add-wish-form
-    [wishes]="filteredWishes"
-    (addNewWish)="wishes.push($event)"
-  >
+    (addNewWishEmit)="wishes.push($event)">
   </app-add-wish-form>
 
-  <div class="p-3">
-    <select class="form-select w-50" aria-label="Filter wishes"
-            [(ngModel)]="filterValueSelected"
-    >
-      <option value="0">All</option>
-      <option value="1">Fulfilled</option>
-      <option value="2">Unfulfilled</option>
-    </select>
-  </div>
+  <app-filter-wish-list
+    (filteredWishesEmit)="filter = $event">
+  </app-filter-wish-list>
 
   <app-wish-list-show
-    [wishes]="filteredWishes"
-    [filterValueSelected]="filterValueSelected"
-  >
+    [wishes]="wishes.filter(filter)">
   </app-wish-list-show>
 </div>
