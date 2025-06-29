@@ -20,23 +20,8 @@
     </select>
   </div>
 
-  <div *ngIf="filteredWishes.length === 0; else showWishList">
-    <p>No wishes yet</p>
-  </div>
-
-  <ng-template #showWishList>
-    <ul *ngFor="let wish of filteredWishes; let idx = index">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox"
-               [id]="idx" value="option{{idx}}"
-               [checked]="wish.isCompleted"
-               (click)="checkOrUncheck(wish)"
-        >
-        <label class="form-check-label"
-               [for]="idx">
-          {{ wish.wishName }}
-        </label>
-      </div>
-    </ul>
-  </ng-template>
+  <app-wish-list-show
+    [filteredWishes]="filteredWishes"
+    [filterValueSelected]="filterValueSelected">
+  </app-wish-list-show>
 </div>

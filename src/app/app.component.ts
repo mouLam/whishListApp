@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { WishList } from "../shared/wishList";
-import {NgForOf, NgIf} from "@angular/common";
+import {Component} from '@angular/core';
+import {WishList} from "../shared/wishList";
 import {FormsModule} from "@angular/forms";
+import {WishListShowComponent} from "./wish-list-show/wish-list-show.component";
 
 const filters = [
   (wish : WishList) => wish,
@@ -13,7 +12,7 @@ const filters = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, FormsModule],
+  imports: [FormsModule, WishListShowComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -26,10 +25,6 @@ export class AppComponent {
   ];
   newWishText: string = "";
   filterValueSelected: any = "0";
-
-  checkOrUncheck(wish: WishList): void {
-    wish.isCompleted = !wish.isCompleted;
-  }
 
   addWish() {
     this.wishes.push(new WishList(this.newWishText));
