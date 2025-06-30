@@ -4,18 +4,14 @@
   </div>
 
   <ng-template #showWishList>
-    <ul *ngFor="let wish of wishes; let idx = index" class="wish-list">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox"
-               [id]="idx" value="option{{idx}}"
-               [checked]="wish.isCompleted"
-               (click)="checkOrUncheck(wish)"
-        >
-        <label class="form-check-label"
-               [for]="idx">
-          {{ wish.wishName }}
-        </label>
-      </div>
+    <ul class="wish-list">
+      <app-wish-list-item
+        *ngFor="let wish of wishes; let idx = index"
+        [wishText]="wish.wishName"
+        [idx]="idx"
+        [(fulfilled)]="wish.isCompleted"
+      >
+      </app-wish-list-item>
     </ul>
   </ng-template>
 </div>

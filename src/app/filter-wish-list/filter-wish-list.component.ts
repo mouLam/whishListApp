@@ -24,9 +24,7 @@ export class FilterWishListComponent {
   filterValueSelected: any = "0";
 
   ngOnInit(): void {
-    console.log(this.filteredWishesEmit);
     this.filterValueChange("0");
-    console.log(this.filteredWishesEmit);
   }
 
   filterValueChange(value: any) {
