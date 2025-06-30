@@ -1,10 +1,9 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {WishList} from "../shared/wishList";
 import {FormsModule} from "@angular/forms";
 import {WishListShowComponent} from "./wish-list-show/wish-list-show.component";
 import {AddWishFormComponent} from "./add-wish-form/add-wish-form.component";
 import {FilterWishListComponent} from "./filter-wish-list/filter-wish-list.component";
-import {filter} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -21,6 +20,5 @@ export class AppComponent {
     new WishList("Make a coffee"),
   ];
 
-  filter: any = () => {};
-
+  filter: any = () => {}; //To avoid undefined
 }

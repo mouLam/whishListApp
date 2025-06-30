@@ -8,7 +8,7 @@
   </app-add-wish-form>
 
   <app-filter-wish-list
-    (filteredWishesEmit)="filter = $event">
+    [(filteredWishesEmit)]="filter">
   </app-filter-wish-list>
 
   <app-wish-list-show
