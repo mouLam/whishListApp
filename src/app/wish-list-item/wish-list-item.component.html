@@ -2,12 +2,12 @@
   <div class="form-check">
     <input class="form-check-input" type="checkbox"
            [id]="idx" value="option{{idx}}"
-           [checked]="fulfilled"
+           [checked]="wish.isCompleted"
            (click)="checkOrUncheck()"
     >
     <label class="form-check-label"
            [for]="idx">
-      {{ wishText }}
+      {{ wish.wishName }}
     </label>
   </div>
   <div>

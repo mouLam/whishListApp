@@ -8,9 +8,8 @@
       <div class="col-sm-6">
         <app-wish-list-item
           *ngFor="let wish of wishes; let idx = index"
-          [wishText]="wish.wishName"
+          [wish]="wish"
           [idx]="idx"
-          [(fulfilled)]="wish.isCompleted"
         >
         </app-wish-list-item>
       </div>
