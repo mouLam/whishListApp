@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {eventBus} from "../../shared/services/eventBus";
 
 @Component({
   selector: 'app-wish-list-item',
@@ -20,4 +21,7 @@ export class WishListItemComponent {
     this.fulfilledChange.emit(this.fulfilled);
   }
 
+  removeWish() {
+    eventBus.emit("removeWish", this.idx);
+  }
 }
