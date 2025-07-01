@@ -1,6 +1,10 @@
 import {Subject} from "rxjs";
+import {Injectable} from "@angular/core";
 
-class EventBus {
+@Injectable({
+  providedIn: 'root',
+})
+export class EventBus {
   private subject = new Subject();
 
   emit(eventName: string, data: any) {
@@ -14,5 +18,3 @@ class EventBus {
   }
 
 }
-
-export const eventBus = new EventBus();
