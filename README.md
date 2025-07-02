@@ -20,6 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Dependency injection
 - Issuing HTTP Requests
 - Handling Errors for HTTP Requests
+- Create Modules
 - 
 ## Development server
 

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {WishList} from "../../shared/wishList";
+import {WishList} from "../../../shared/wishList";
 
 const filters = [
   (wish : WishList) => wish,
