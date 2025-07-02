@@ -18,6 +18,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Using Observables to create an Event Bus
 - Refactoring
 - Dependency injection
+- Issuing HTTP Requests
 - 
 ## Development server
 
