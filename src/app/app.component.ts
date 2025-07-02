@@ -6,6 +6,7 @@ import {AddWishFormComponent} from "./add-wish-form/add-wish-form.component";
 import {FilterWishListComponent} from "./filter-wish-list/filter-wish-list.component";
 import {EventBus} from "../shared/services/eventBus";
 import {WishListService} from "./wish-list.service";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-root',

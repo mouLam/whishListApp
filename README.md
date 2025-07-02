@@ -19,6 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Refactoring
 - Dependency injection
 - Issuing HTTP Requests
+- Handling Errors for HTTP Requests
 - 
 ## Development server
 
