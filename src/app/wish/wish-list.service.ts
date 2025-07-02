@@ -19,7 +19,7 @@ export class WishListService {
 
   getWishes() {
     let options = this.getStandardOptions();
-    return this.http.get("assets/wishes1.json", options)
+    return this.http.get("assets/wishes.json", options)
       .pipe(catchError(this.handleError));
   }
 
