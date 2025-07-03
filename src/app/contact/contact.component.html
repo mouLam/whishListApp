@@ -28,12 +28,17 @@
       <small
         class="text-danger"
         *ngIf="contactForm.get('email')?.hasError('required')"
-      >Email is required.</small>
+      >The Email is required.</small>
 
       <small
         class="text-danger"
         *ngIf="contactForm.get('email')?.hasError('email')"
-      >Email is invalid.</small>
+      ><br>The Email is invalid.</small>
+
+      <small
+        class="text-danger"
+        *ngIf="contactForm.get('email')?.hasError('invalidEmailCustom')"
+      ><br>The Email provider is not allowed.</small>
     </div>
   </div>
   <div class="mb-3">
