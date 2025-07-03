@@ -3,6 +3,30 @@ A simple project to test Angular features and concepts
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
 
+**Front-end toolkit**: Bootstrap included via CDN
+
+# Feature and Concept used : 
+- ngFor 
+- ngIf (control flow)
+- ngTemplate
+- Binding data to properties and attributes
+- Binding Events
+- Using ngModel to bind values to form control
+- Listening for changes to ngModel values (ngModelChange)
+- Using Getters to filter and provide data
+- Creating a component with Input (@Input())
+- Outputting information from a component (@Output())
+- Initializing component functionality (ngOnInit())
+- Setting and practicing with Two-Way-Binding
+- Using Observables to create an Event Bus
+- Refactoring
+- Dependency injection
+- Issuing HTTP Requests
+- Handling Errors for HTTP Requests
+- Create Modules
+- Create Component in Modules and export it
+- Reactive Forms and Control Groups
+- Custom Validators email
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

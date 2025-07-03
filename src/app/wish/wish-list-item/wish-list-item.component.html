@@ -1,0 +1,17 @@
+<li class="d-flex justify-content-between">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox"
+           [id]="idx" value="option{{idx}}"
+           [checked]="wish.isCompleted"
+           (click)="checkOrUncheck()"
+    >
+    <label class="form-check-label"
+           [for]="idx">
+      {{ wish.wishName }}
+    </label>
+  </div>
+  <div>
+    <button type="button" class="btn-close" (click)="removeWish()"></button>
+  </div>
+</li>
+

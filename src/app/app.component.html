@@ -1,17 +1,3 @@
-<div class="container">
-  <div class="p-3">
-    <h1>All my wishes</h1>
-  </div>
+<app-wish />
 
-  <app-add-wish-form
-    (addNewWishEmit)="wishes.push($event)">
-  </app-add-wish-form>
-
-  <app-filter-wish-list
-    [(filteredWishesEmit)]="filter">
-  </app-filter-wish-list>
-
-  <app-wish-list-show
-    [wishes]="wishes.filter(filter)">
-  </app-wish-list-show>
-</div>
+<app-contact />

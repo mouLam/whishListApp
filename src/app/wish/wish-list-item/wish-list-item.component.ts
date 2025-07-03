@@ -1,4 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {WishList} from "../../../shared/wishList";
+import {EventBus} from "../../../shared/services/eventBus";
 
 @Component({
   selector: 'app-wish-list-item',
@@ -9,15 +11,17 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class WishListItemComponent {
 
-  @Input() wishText! : string;
+  @Input() wish! : WishList;
   @Input() idx! : number;
-  @Input() fulfilled! : boolean;
-  @Output() fulfilledChange = new EventEmitter<boolean>();
+
+  constructor(private eventBus : EventBus) {}
 
   checkOrUncheck(): void {
     // In this next line, we can set input because it's an HTMLInputElement. Can't be managed ourselves
-    this.fulfilled = !this.fulfilled;
-    this.fulfilledChange.emit(this.fulfilled);
+    this.wish.isCompleted = !this.wish.isCompleted;
   }
 
+  removeWish() {
+    this.eventBus.emit("removeWish", this.idx);
+  }
 }
